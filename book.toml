@@ -1,0 +1,31 @@
+[book]
+title = "手把手教你从零构建 Coding Agent"
+authors = ["Du Jiajun"]
+language = "zh"
+src = "src"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = ""
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+# PDF 后端：由 mdbook-pdf（headless Chrome）无头渲染 print.html 再打印为 PDF，
+# 因此 HTML 里的 Mermaid 图表、代码高亮都会原样进入 PDF。
+# 浏览器指定为系统自带的 Microsoft Edge（Chromium 内核），无需另装 Chrome。
+[output.pdf]
+browser-binary-path = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+print-background = true        # 保留背景色：代码高亮与 Mermaid 填色
+paper-width = 8.27             # A4 纸宽（英寸）
+paper-height = 11.69           # A4 纸高（英寸）
+margin-top = 0.6
+margin-bottom = 0.6
+margin-left = 0.6
+margin-right = 0.6
+generate-document-outline = true
+timeout = 120                  # 浏览器等待上限（秒），避免渲染异常时长时间挂起
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"

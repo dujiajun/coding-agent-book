@@ -1,0 +1,19 @@
+{
+  "name": "tinycode",
+  "version": "0.2.0",
+  "private": true,
+  "description": "《手把手教你从零构建 Coding Agent》贯穿教学项目——核心阶段快照（第 1 部分 + 2.1 循环 + 3.x 核心工具）",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --experimental-strip-types src/main.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
